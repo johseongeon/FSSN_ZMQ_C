@@ -7,18 +7,18 @@ int main()
 {
     void* context = zmq_ctx_new();          
     void* responder = zmq_socket(context, ZMQ_REP);
-    zmq_bind(responder, "tcp://*:5555");
+    zmq_bind(responder, "tcp://*:5554");
 
     while (1) {
         char buffer[1024];
         memset(buffer, 0, 1024);
-        zmq_recv(responder, buffer, 1024, 0);  // receive a message from the client
+        zmq_recv(responder, buffer, 1024, 0);
         printf("Received: %s\n", buffer);
         if (strncmp(buffer, "exit", 4) == 0)
         {
             break;
         }
-        zmq_send(responder, buffer, strlen(buffer), 0);  // send a message to the client
+        zmq_send(responder, buffer, strlen(buffer), 0);
     }
 
     printf("exit...\n");

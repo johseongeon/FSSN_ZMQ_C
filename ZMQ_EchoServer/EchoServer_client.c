@@ -7,7 +7,7 @@ int main()
 {
     void* context = zmq_ctx_new();       
     void* requester = zmq_socket(context, ZMQ_REQ);  
-    zmq_connect(requester, "tcp://localhost:5555");   
+    zmq_connect(requester, "tcp://localhost:5554");   
 
     while (1) {
         char buffer[1024];
@@ -20,8 +20,8 @@ int main()
             break;
         }
 
-        zmq_send(requester, buffer, strlen(buffer), 0);   // send a message to the server
-        zmq_recv(requester, buffer, 1024, 0);              // receive a message frome the server
+        zmq_send(requester, buffer, strlen(buffer), 0);
+        zmq_recv(requester, buffer, 1024, 0);
 
         printf("Received: %s\n", buffer);
     }

@@ -12,13 +12,11 @@ int main(void)
     zmq_bind(socket, "tcp://*:5555");
 
     while (1) {
-        // Wait for next request from client
         int B = 0;
         char buffer[1024];
         memset(buffer, 0, 1024);
         zmq_recv(socket, buffer, 1024, 0);
         
-        // Do some 'work'
         sleep(1);
 
         if (strncmp(buffer, "hello", 5) == 0 && strlen(buffer) == 6) //입력받은 message가 'hello'면
@@ -35,7 +33,6 @@ int main(void)
             break;
         }
 
-        // Send reply back to client
         if (B == 0)
         {
             zmq_send(socket, buffer, strlen(buffer), 0);
