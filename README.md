@@ -35,7 +35,18 @@ run client cli and test
 
 Arguments serve as the username in the client and as the number of threads in the server.
 
-for example)
-'''cmd
-cd dealer_router
-'''
+for example) In Dealer-Router Pattern. The server runs 4 threads, and the client's username is A.
+
+```cmd
+cd ZMQ_DEALER_ROUTER
+gcc -o server dealer_router_server.c
+gcc -o client dealer_router_client.c
+```
+
+run with arguments
+```cmd
+./server 4
+```
+```cmd
+./client A
+```
