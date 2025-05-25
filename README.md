@@ -28,9 +28,14 @@ start server first
 ./{server filename} [arguments]
 ```
 
-run client cli
+run client cli and test
 ```cmd
 ./{client filename} [arguments]
 ```
 
-arguments 
+Arguments serve as the username in the client and as the number of threads in the server.
+
+for example)
+'''cmd
+cd dealer_router
+'''
