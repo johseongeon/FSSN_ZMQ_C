@@ -2,6 +2,8 @@
 
 Implementing Various Communication Patterns with ZeroMQ
 
+Official ZeroMQ Documentation https://zguide.zeromq.org/docs/chapter2/
+
 ---
 
 ## OS
