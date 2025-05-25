@@ -15,8 +15,22 @@ install ZeroMQ library
 apt-get install libczmq-dev
 ```
 
-Generate server and client executable files
+How to generate server and client executable files
 ```cmd
 gcc -o {server filename} server.c -lzmq
 gcc -o {client filename} client.c -lzmq
 ```
+---
+## test in cli
+
+start server first
+```cmd
+./{server filename} [arguments]
+```
+
+run client cli
+```cmd
+./{client filename} [arguments]
+```
+
+arguments 
