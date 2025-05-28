@@ -1,5 +1,7 @@
 # FSSN_ZMQ_C
 
+FullStack Service Networking 2023-1 term-project
+
 Implementing Various Communication Patterns with ZeroMQ
 
 Official ZeroMQ Documentation https://zguide.zeromq.org/docs/chapter2/
@@ -41,8 +43,8 @@ for example) In Dealer-Router Pattern. The server runs 4 threads, and the client
 
 ```cmd
 cd ZMQ_DEALER_ROUTER
-gcc -o server dealer_router_server.c
-gcc -o client dealer_router_client.c
+gcc -o server dealer_router_server.c -lzmq
+gcc -o client dealer_router_client.c -lzmq
 ```
 
 run with arguments
